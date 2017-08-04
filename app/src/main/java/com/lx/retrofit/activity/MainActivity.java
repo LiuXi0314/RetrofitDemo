@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.lx.retrofit.R;
 import com.lx.retrofit.Utils.LogUtils;
 import com.lx.retrofit.bean.ArticleList;
+import com.lx.retrofit.bean.Results;
 import com.lx.retrofit.bean.Translation;
 import com.lx.retrofit.callback.ArticleListCall;
 import com.lx.retrofit.callback.TranslationCall;
@@ -37,6 +38,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArticleList> call, Response<ArticleList> response) {
                 LogUtils.d("is successful===========" + response.isSuccessful());
+                if (response.body() != null) {
+                    LogUtils.d("response.body().isError() = " + response.body().isError());
+                    if (response.body().getArticleList() == null) {
+                        LogUtils.d("response.body().getArticleList()  is null");
+                    } else {
+                        LogUtils.d("response.body().getArticleList().size()" + response.body().getArticleList().size());
+                        Results results = response.body().getArticleList().get(0);
+                        if (results == null) {
+                            LogUtils.d("results = null ");
+                        } else {
+                            LogUtils.d("results = " + results.toString());
+                        }
+                    }
+
+
+                }
+
+
             }
 
             @Override

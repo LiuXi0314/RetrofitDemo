@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  */
 
 public interface ArticleListCall {
-    @GET("api/data/Android/10/1/")
+    @GET("api/data/Android/10/1")
     Call<ArticleList> getCall();
 }
