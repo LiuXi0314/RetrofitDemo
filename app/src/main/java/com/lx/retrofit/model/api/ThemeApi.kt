@@ -8,6 +8,6 @@ import retrofit2.http.GET
  * Created by liuxi on 2017/12/23.
  */
 interface ThemeApi {
-    @GET
+    @GET("api/4/themes")
     fun getTheme(): Call<MutableList<ThemeData>>
 }

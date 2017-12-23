@@ -1,7 +1,9 @@
 package com.lx.retrofit.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.lx.retrofit.R;
 import com.lx.retrofit.Utils.LogUtils;
@@ -19,13 +21,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.zhiTheme).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump();
+            }
+        });
+    }
 
-        testGankApi();
+    private void jump() {
+        LogUtils.d("to Theme");
+        startActivity(new Intent(this, ThemeActivity.class));
     }
 
     private void testGankApi() {

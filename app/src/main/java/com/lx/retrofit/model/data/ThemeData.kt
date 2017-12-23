@@ -5,4 +5,6 @@ package com.lx.retrofit.model.data
  */
 data class ThemeData(var content: String, var id: Int) {
 
+
+
 }
