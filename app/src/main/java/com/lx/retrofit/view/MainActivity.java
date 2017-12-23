@@ -1,4 +1,4 @@
-package com.lx.retrofit.activity;
+package com.lx.retrofit.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
