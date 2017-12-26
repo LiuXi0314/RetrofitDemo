@@ -42,13 +42,13 @@ class ThemeActivity : AppCompatActivity() {
                 .baseUrl(Constance.ZhihuHeader).build()
 
         var themeApi = retrofit.create(ThemeApi::class.java)
-        themeApi.getTheme().enqueue(object : Callback<MutableList<ThemeData>>{
-            override fun onResponse(call: Call<MutableList<ThemeData>>?, response: Response<MutableList<ThemeData>>?) {
+        themeApi.getTheme().enqueue(object : Callback<ThemeData>{
+            override fun onResponse(call: Call<ThemeData>?, response: Response<ThemeData>?) {
                 LogUtils.d(response!!.body().toString())
                 LogUtils.d("---------------------------")
             }
 
-            override fun onFailure(call: Call<MutableList<ThemeData>>?, t: Throwable?) {
+            override fun onFailure(call: Call<ThemeData>?, t: Throwable?) {
                 LogUtils.d("---------------------------error")
             }
 

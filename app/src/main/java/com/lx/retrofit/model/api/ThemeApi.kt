@@ -9,5 +9,5 @@ import retrofit2.http.GET
  */
 interface ThemeApi {
     @GET("api/4/themes")
-    fun getTheme(): Call<MutableList<ThemeData>>
+    fun getTheme(): Call<ThemeData>
 }
